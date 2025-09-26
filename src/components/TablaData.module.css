@@ -1,0 +1,108 @@
+/* .ctnGeneral {
+  max-width: 1000px;
+  margin: 2rem auto;
+  
+
+  text-align: center;
+}
+
+.ctnSeccion {
+
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.tituloSeccion {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.tabla {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: center;
+}
+
+.tabla th,
+.tabla td {
+  padding: 0.8rem 1rem;
+  border-bottom: 1px solid #e5e5ea;
+}
+
+.tabla th {
+  color: #3a3a3c;
+  font-weight: 600;
+}
+
+.tabla tr:hover td {
+  background-color: rgba(0,0,0,0.03);
+  transition: background-color 0.25s ease;
+  cursor: default;
+}
+
+
+
+ */
+
+
+ .ctnGeneral {
+  max-width: 1000px;
+  margin: 2rem auto;
+  text-align: center;
+}
+
+.ctnSeccion {
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  overflow-x: auto; /* scroll horizontal si tabla es ancha */
+}
+
+.tituloSeccion {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.tabla {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: center;
+  min-width: 600px; /* evita que se achique demasiado en móviles */
+}
+
+.tabla th,
+.tabla td {
+  padding: 0.8rem 1rem;
+  border-bottom: 1px solid #e5e5ea;
+}
+
+.tabla th {
+  color: #3a3a3c;
+  font-weight: 600;
+}
+
+.tabla tr:hover td {
+  background-color: rgba(0,0,0,0.03);
+  transition: background-color 0.25s ease;
+  cursor: default;
+}
+
+/* ----------------- Responsive ----------------- */
+@media (max-width: 640px) {
+  .ctnGeneral {
+    margin: 1rem;
+  }
+
+  .tituloSeccion {
+    font-size: 1.25rem;
+  }
+
+  .tabla th,
+  .tabla td {
+    padding: 0.5rem 0.75rem;
+    font-size: 0.875rem;
+  }
+
+  .tabla {
+    min-width: 100%; /* asegura que ocupe todo el ancho visible */
+  }
+}

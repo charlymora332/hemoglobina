@@ -1,0 +1,82 @@
+.ctnCalculadora {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 3rem 2rem;
+
+    color: #1c1c1e;
+}
+
+.tituloForm {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.pacienteContainer {
+
+    /* border-radius: 12px;
+  background: #f5f5f7;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease; */
+}
+
+/* .pacienteContainer:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+} */
+
+.ctnBotonesForm {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.botonSubmit,
+.botonAgregar {
+    padding: 0.9rem 2rem;
+    border-radius: 12px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    border: none;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.botonSubmit {
+    background: #007aff;
+    color: white;
+    box-shadow: 0 4px 12px rgba(0, 122, 255, 0.3);
+}
+
+.botonSubmit:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(0, 122, 255, 0.4);
+}
+
+.botonAgregar {
+    border: solid 2px #037c21;
+    background-color: white;
+    color: black;
+    box-shadow: 0 4px 12px rgba(52, 199, 89, 0.3);
+}
+
+.botonAgregar:hover {
+    transform: scale(1.05);
+    background-color: #b7f1c5;
+    box-shadow: 0 8px 20px rgba(52, 199, 89, 0.4);
+}
+
+
+@media (max-width: 768px) {
+    .ctnCalculadora {
+        padding: 1rem 0.4rem;
+    }
+}

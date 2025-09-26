@@ -1,43 +1,80 @@
-
-
-import React from 'react'
-import { useForm, useFieldArray } from "react-hook-form";
+import React from "react";
 import css from "./PreguntasForm.module.css";
 
-function PreguntasForm({index, register,remove}) {
-    // const { register, control, handleSubmit, reset } = useForm({
-    //   defaultValues: {
-    //     pacientes: [],
-    //   },
-    // });
+function PreguntasForm({ index, register, remove, errors }) {
   return (
-    <div>
-     
-      <h4>Paciente {index + 1}</h4>
+    <div className={css.ctnPaciente}>
+      <h4 className={css.titulo}>Paciente {index + 1}</h4>
+      <div className={css.ctnInputs}>
+        {/* Nombre */}
+        <div className={css.ctnInput}>
+          <label htmlFor={`nombre-${index}`} className={css.label}>
+            Nombre
+          </label>
+          <input
+            id={`nombre-${index}`}
+            {...register(`pacientes.${index}.nombre`, { required: "Nombre requerido" })}
+            placeholder="Nombre"
+            className={css.input}
+          />
+          {errors?.pacientes?.[index]?.nombre && (
+            <span className={css.error}>{errors.pacientes[index].nombre.message}</span>
+          )}
+        </div>
 
-      <label>Nombre</label>
-      <input {...register(`pacientes.${index}.nombre`)} placeholder="Nombre" />
+        {/* Hemoglobina */}
+        <div className={css.ctnInput}>
+          <label htmlFor={`hemoglobina-${index}`} className={css.label}>
+            Hemoglobina
+          </label>
+          <input
+            id={`hemoglobina-${index}`}
+            type="number"
+            step="0.1"
+            min="0"
+            {...register(`pacientes.${index}.hemoglobina`, {
+              required: "Nivel de hemoglobina requerido",
+              valueAsNumber: true,
+              min: { value: 0, message: "Debe ser un número positivo" },
+            })}
+            placeholder="Ej: 13.5"
+            className={css.input}
+          />
+          {errors?.pacientes?.[index]?.hemoglobina && (
+            <span className={css.error}>{errors.pacientes[index].hemoglobina.message}</span>
+          )}
+        </div>
 
-      <label>Hemoglobina</label>
-      <input
-        type="number"
-        {...register(`pacientes.${index}.hemoglobina`)}
-        placeholder="Ej: 13.5"
-      />
+        {/* Género */}
+        <div className={css.ctnInput}>
+          <label htmlFor={`genero-${index}`} className={css.label}>
+            Género
+          </label>
+          <select
+            id={`genero-${index}`}
+            {...register(`pacientes.${index}.genero`, { required: "Género requerido" })}
+            className={css.select}
+          >
+            <option value="">Seleccionar</option>
+            <option value="2">Masculino</option>
+            <option value="1">Femenino</option>
+          </select>
+          {errors?.pacientes?.[index]?.genero && (
+            <span className={css.error}>{errors.pacientes[index].genero.message}</span>
+          )}
+        </div>
 
-      <label>Género</label>
-      <select {...register(`pacientes.${index}.genero`)}>
-        <option value="">Seleccionar</option>
-        <option value="2">Masculino</option>
-        <option value="1">Femenino</option>
-      </select>
-
-      <button type="button" onClick={() => remove(index)}>
-        ❌ Eliminar
-      </button>
+        {/* Botón eliminar */}
+        <button
+          type="button"
+          onClick={() => remove(index)}
+          className={css.btnEliminar}
+        >
+          ❌
+        </button>
+      </div>
     </div>
-   
-  )
+  );
 }
 
-export default PreguntasForm
+export default PreguntasForm;
