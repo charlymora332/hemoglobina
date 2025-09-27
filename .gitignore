@@ -1,6 +1,6 @@
 # Ignora node_modules y todo menos index.html, assets, favicon.ico
 node_modules/
-build/
+dist/
 *.log
 *.tmp
 .vscode/
