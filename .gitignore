@@ -1,0 +1,7 @@
+# Ignora node_modules y todo menos index.html, assets, favicon.ico
+node_modules/
+build/
+*.log
+*.tmp
+.vscode/
+.DS_Store
